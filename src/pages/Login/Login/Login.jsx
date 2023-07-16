@@ -1,4 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -12,7 +13,7 @@ const Login = () => {
                     <input
                         className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
                         type="email"
-                        id="email"
+                        name="email"
                         placeholder="Enter your email"
                     />
                 </div>
@@ -23,7 +24,7 @@ const Login = () => {
                     <input
                         className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
                         type="password"
-                        id="password"
+                        name="password"
                         placeholder="Enter your password"
                     />
                 </div>
@@ -41,6 +42,10 @@ const Login = () => {
                     <FcGoogle className="bg-white"></FcGoogle>
                     Log In with Google
                 </div>
+                <p className="text-sm mt-1 ml-1">
+                    Do not Have an Account? Please, <Link to='/register' className="text-bold text-base 
+                    font-semibold text-blue-500">Register</Link>
+                </p>
             </form>
         </div>
     );

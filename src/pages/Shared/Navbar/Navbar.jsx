@@ -12,19 +12,19 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <ul className="flex space-x-6">
                         <li>
-                            <a href="/">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <a href="/categories">All Categories</a>
+                            <Link to="/categories">All Categories</Link>
                         </li>
                         <li>
-                            <a href="/mytoys">My Toys</a>
+                            <Link to="/mytoys">My Toys</Link>
                         </li>
                         <li>
-                            <a href="/addtoy">Add a Toy</a>
+                            <Link to="/addtoy">Add a Toy</Link>
                         </li>
                         <li>
-                            <a href="/blogs">Blogs</a>
+                            <Link to="/blogs">Blogs</Link>
                         </li>
                         <li>
                             <Link to="/login">Login</Link>
