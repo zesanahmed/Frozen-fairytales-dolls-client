@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -24,6 +25,9 @@ const Navbar = () => {
                         </li>
                         <li>
                             <a href="/blogs">Blogs</a>
+                        </li>
+                        <li>
+                            <Link to="/login">Login</Link>
                         </li>
                     </ul>
                     <img className="h-8 w-8 ml-10 mr-4 rounded-full" src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais" alt="User Profile" />
