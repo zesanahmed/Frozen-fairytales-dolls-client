@@ -1,11 +1,20 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 
 const Login = () => {
+    const { user, loading } = useContext(AuthContext);
+
+    const handleLogin = event => {
+        event.preventDefault();
+
+    }
+
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h1 className="text-3xl font-bold mb-6">Email Login</h1>
-            <form className="bg-white p-8 rounded-lg shadow-md">
+            <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md">
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                         Email

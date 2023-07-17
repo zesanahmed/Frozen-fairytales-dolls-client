@@ -7,7 +7,7 @@ const RegistrationPage = () => {
     const [password, setPassword] = useState('');
     const [photoURL, setPhotoURL] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSignUp = (event) => {
         event.preventDefault();
 
         // Perform registration logic with the form data
@@ -17,7 +17,7 @@ const RegistrationPage = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h1 className="text-3xl font-bold mb-6">Registration</h1>
-            <form className="bg-white p-8 rounded-lg shadow-md" onSubmit={handleSubmit}>
+            <form className="bg-white p-8 rounded-lg shadow-md" onSubmit={handleSignUp}>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                         Name
