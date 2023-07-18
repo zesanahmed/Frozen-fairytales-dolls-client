@@ -4,15 +4,35 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 
 const Login = () => {
-    const { user, loading } = useContext(AuthContext);
+    const { loading, signIn, googleSignInWithPopup } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error))
 
     }
 
+    const handleSignInWithPopUp = () => {
+        googleSignInWithPopup()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error))
+    }
+
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center my-10 bg-gray-100">
             <h1 className="text-3xl font-bold mb-6">Email Login</h1>
             <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md">
                 <div className="mb-4">
@@ -43,10 +63,9 @@ const Login = () => {
                 >
                     Log In
                 </button>
-                <div
+                <div onClick={handleSignInWithPopUp}
                     className="btn bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md font-semibold w-full"
                     type="button"
-                // onClick={handleGoogleLogin}
                 >
                     <FcGoogle className="bg-white"></FcGoogle>
                     Log In with Google
@@ -61,3 +80,4 @@ const Login = () => {
 };
 
 export default Login;
+

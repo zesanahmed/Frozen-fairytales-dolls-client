@@ -5,7 +5,7 @@ const Banner = () => {
         <section className="relative py-24">
             <div className="absolute inset-0">
                 <img
-                    src="https://img.freepik.com/free-vector/magic-castle-winter-day-frozen-river-bank_107791-5003.jpg?w=1060&t=st=1689536383~exp=1689536983~hmac=4de6036dd726312d36f7481c5fa91d6e37e4d85422e98daa4643d497dc0ecb06"
+                    src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-nykfag_7adf4a82.jpeg"
                     alt="Background"
                     className="w-full h-full object-cover"
                 />
