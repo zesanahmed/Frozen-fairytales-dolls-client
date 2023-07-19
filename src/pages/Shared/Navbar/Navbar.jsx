@@ -33,7 +33,7 @@ const Navbar = () => {
                             }
                         </li>
                         <li>
-                            {user && <Link to="/addtoy">Add a Toy</Link>}
+                            {user && <Link to="/addToy">Add a Toy</Link>}
                         </li>
 
                         <li>
@@ -61,7 +61,7 @@ const Navbar = () => {
                         }
                     </li>
                     <li>
-                        {user && <Link to="/addtoy">Add a Toy</Link>}
+                        {user && <Link to="/addToy">Add a Toy</Link>}
                     </li>
 
                 </ul>
