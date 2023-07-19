@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TableCard = ({ toy }) => {
     const { _id, sellerName, name, subCategory, price, quantity } = toy;
+
+    // const handleDetails =(id) => {
+
+    // }
     return (
         <tr>
             <td>
@@ -21,7 +26,8 @@ const TableCard = ({ toy }) => {
                 <span>Quantity: {quantity}</span>
             </td>
             <th>
-                <button className="btn btn-ghost btn-xs">View Details</button>
+                <Link to={`/toyDetails/${_id}`}>
+                    <button className="btn btn-ghost btn-xs">View Details</button></Link>
             </th>
         </tr>
     );
