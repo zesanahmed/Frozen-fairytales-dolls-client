@@ -5,7 +5,7 @@ const Shorts = () => {
         <div className="hero min-h-screen bg-sky-200 text-blue-900 m-4">
             <div className="hero-content flex-col lg:flex-row">
                 <img src="https://lumiere-a.akamaihd.net/v1/images/pr_olafsfrozenadventure_18539_cac7af62.png?region=0%2C0%2C400%2C400" className="max-w-sm rounded-lg shadow-2xl" />
-                <div>
+                <div className="w-full">
                     <h1 className="text-5xl font-bold">FROZEN SHORTS</h1>
                     <p className='mt-6 text-xl font-semibold'>Olaf’s Frozen Adventure plus 6 Classic Disney Shorts</p>
 
