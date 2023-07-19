@@ -6,23 +6,26 @@ import AnimationCategory from './AnimationCategory';
 
 const Categories = () => {
     return (
-        <Tabs className="mx-4">
-            <TabList>
-                <Tab>Disney princes</Tab>
-                <Tab>Frozen dolls</Tab>
-                <Tab>Animation characters</Tab>
-            </TabList>
+        <div>
+            <p className='text-4xl text-center font-bold text-slate-700 mt-5 mb-3'>Categories</p>
+            <Tabs className="mx-4">
+                <TabList>
+                    <Tab>Disney princes</Tab>
+                    <Tab>Frozen dolls</Tab>
+                    <Tab>Animation characters</Tab>
+                </TabList>
 
-            <TabPanel>
-                <DisneyCategory />
-            </TabPanel>
-            <TabPanel>
-                <FrozenCategory />
-            </TabPanel>
-            <TabPanel>
-                <AnimationCategory />
-            </TabPanel>
-        </Tabs>
+                <TabPanel>
+                    <DisneyCategory />
+                </TabPanel>
+                <TabPanel>
+                    <FrozenCategory />
+                </TabPanel>
+                <TabPanel>
+                    <AnimationCategory />
+                </TabPanel>
+            </Tabs>
+        </div>
     );
 };
 
