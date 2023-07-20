@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import MyToysCard from './MyToysCard';
+import Swal from 'sweetalert2'
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -16,16 +17,41 @@ const MyToys = () => {
             .then(data => setAddedToys(data))
     }, []);
 
+    const handleDelete = (id) => {
+        const procced = confirm('are you sure you want to delete')
+
+
+        if (procced) {
+            fetch(`http://localhost:5000/addedToys/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire({
+                            title: 'Deleted!',
+                            text: 'Do you want to continue',
+                            icon: 'success',
+                            confirmButtonText: 'Okay'
+                        })
+                        const remaining = addedToys.filter(toy => toy._id !== id)
+                        setAddedToys(remaining);
+                    }
+                })
+        }
+    };
+
 
     return (
-        <div className='mx-40'>
+        <div className='mx-40 my-10'>
             <p className="text-4xl font-bold my-4 text-center ">My Toys</p>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Toy Name</th>
                             <th>Price / Quantity</th>
                             <th>Rating</th>
                             <th></th>
@@ -36,6 +62,7 @@ const MyToys = () => {
                             addedToys.map(myToy => <MyToysCard
                                 key={myToy._id}
                                 myToy={myToy}
+                                handleDelete={handleDelete}
                             ></MyToysCard>)
                         }
                     </tbody>
