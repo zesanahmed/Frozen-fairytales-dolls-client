@@ -3,7 +3,7 @@ import AnimationCard from './AnimationCard';
 
 const AnimationCategory = () => {
     const [categories, setCategories] = useState([]);
-    const url = `http://localhost:5000/dolls?category=animation`;
+    const url = `https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/dolls?category=animation`;
 
     useEffect(() => {
         fetch(url)

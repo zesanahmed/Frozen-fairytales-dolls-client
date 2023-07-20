@@ -3,7 +3,7 @@ import FrozenCard from './FrozenCard';
 
 const FrozenCategory = () => {
     const [categories, setCategories] = useState([]);
-    const url = `http://localhost:5000/dolls?category=frozen`;
+    const url = `https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/dolls?category=frozen`;
 
     useEffect(() => {
         fetch(url)

@@ -16,7 +16,7 @@ const UpdateToys = () => {
         console.log(user);
 
 
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/toys/${_id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user)

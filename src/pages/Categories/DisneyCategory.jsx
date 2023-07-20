@@ -3,7 +3,7 @@ import DisneyCard from './DisneyCard';
 
 const DisneyCategory = () => {
     const [categories, setCategories] = useState([]);
-    const url = `http://localhost:5000/dolls?category=disney`;
+    const url = `https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/dolls?category=disney`;
 
     useEffect(() => {
         fetch(url)

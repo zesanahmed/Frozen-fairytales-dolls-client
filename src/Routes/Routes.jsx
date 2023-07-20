@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: '/allToys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/toys')
+                loader: () => fetch('https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/toys')
             },
             {
                 path: '/login',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: '/toyDetails/:id',
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/myToys',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateToy/:id',
                 element: <UpdateToys></UpdateToys>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/toys/${params.id}`)
             }
         ]
     },

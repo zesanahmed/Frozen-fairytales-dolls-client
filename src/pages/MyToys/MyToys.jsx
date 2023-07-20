@@ -8,7 +8,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [addedToys, setAddedToys] = useState([]);
 
-    const url = `http://localhost:5000/addedToys?email=${user?.email}`;
+    const url = `https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/addedToys?email=${user?.email}`;
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const MyToys = () => {
 
 
         if (procced) {
-            fetch(`http://localhost:5000/addedToys/${id}`, {
+            fetch(`https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/addedToys/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -43,7 +43,7 @@ const MyToys = () => {
     };
 
     const handleUpdateToy = (id) => {
-        fetch(`http://localhost:5000/addedToys/${id}`, {
+        fetch(`https://frozen-fairytales-dolls-server-zesanahmed.vercel.app/addedToys/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ status: 'confirm' })
