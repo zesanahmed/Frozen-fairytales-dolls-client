@@ -27,14 +27,13 @@ const Navbar = () => {
                         <li>
                             <Link to="/allToys">All Toys</Link>
                         </li>
-                        <li>
-                            {
-                                user && <Link to="/mytoys">My Toys</Link>
-                            }
-                        </li>
-                        <li>
-                            {user && <Link to="/addToy">Add a Toy</Link>}
-                        </li>
+                        {user?.email ?
+                            <>
+                                <li><Link to="/myToys">My Toys</Link></li>
+                                <li><Link to="/addToy">Add a Toy</Link></li>
+                            </>
+                            : <></>
+                        }
 
                         <li>
                             <Link to="/login">Login</Link>
@@ -55,14 +54,13 @@ const Navbar = () => {
                     <li>
                         <Link to="/allToys">All Toys</Link>
                     </li>
-                    <li>
-                        {
-                            user && <Link to="/mytoys">My Toys</Link>
-                        }
-                    </li>
-                    <li>
-                        {user && <Link to="/addToy">Add a Toy</Link>}
-                    </li>
+                    {user?.email ?
+                        <>
+                            <li><Link to="/myToys">My Toys</Link></li>
+                            <li><Link to="/addToy">Add a Toy</Link></li>
+                        </>
+                        : <></>
+                    }
 
                 </ul>
             </div>
