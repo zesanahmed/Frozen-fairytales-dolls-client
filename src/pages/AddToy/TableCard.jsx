@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 const TableCard = ({ toy }) => {
     const { _id, sellerName, name, subCategory, price, quantity } = toy;
 
-    // const handleDetails =(id) => {
 
-    // }
     return (
         <tr>
             <td>

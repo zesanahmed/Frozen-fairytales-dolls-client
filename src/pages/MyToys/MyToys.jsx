@@ -42,6 +42,26 @@ const MyToys = () => {
         }
     };
 
+    const handleUpdateToy = (id) => {
+        fetch(`http://localhost:5000/addedToys/${id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Updated',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    })
+                }
+            })
+    }
+
 
     return (
         <div className='mx-40 my-10'>
@@ -63,6 +83,7 @@ const MyToys = () => {
                                 key={myToy._id}
                                 myToy={myToy}
                                 handleDelete={handleDelete}
+                                handleUpdateToy={handleUpdateToy}
                             ></MyToysCard>)
                         }
                     </tbody>

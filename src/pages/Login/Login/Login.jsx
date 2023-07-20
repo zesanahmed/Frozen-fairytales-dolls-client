@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const { loading, signIn, googleSignInWithPopup } = useContext(AuthContext);
@@ -22,7 +23,14 @@ const Login = () => {
                 console.log(user);
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                Swal.fire({
+                    title: 'Incorrect Password!',
+                    text: 'The password you entered is incorrect.',
+                    icon: 'error',
+                    confirmButtonText: 'Try Again'
+                })
+            })
 
     }
 
